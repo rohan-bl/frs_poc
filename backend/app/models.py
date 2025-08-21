@@ -1,8 +1,10 @@
+from datetime import datetime
+from typing import Any
 import uuid
 
 from pydantic import EmailStr
 from sqlmodel import Field, Relationship, SQLModel
-
+from pgvector.sqlalchemy import Vector
 
 # Shared properties
 class UserBase(SQLModel):
@@ -44,7 +46,7 @@ class User(UserBase, table=True):
     id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
     hashed_password: str
     items: list["Item"] = Relationship(back_populates="owner", cascade_delete=True)
-
+    images: list["Image"] = Relationship(back_populates="owner", cascade_delete=True)
 
 # Properties to return via API, id is always required
 class UserPublic(UserBase):
@@ -111,3 +113,34 @@ class TokenPayload(SQLModel):
 class NewPassword(SQLModel):
     token: str
     new_password: str = Field(min_length=8, max_length=40)
+
+class Image(SQLModel, table=True):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
+    filename: str
+    path: str
+    owner_id: uuid.UUID = Field(
+        foreign_key="user.id", nullable=False, ondelete="CASCADE"
+    )
+    owner: User | None = Relationship(back_populates="images")
+    face_embeddings: list["FaceEmbeddings"] = Relationship(back_populates="image", cascade_delete=True)
+
+class ImagePublic(SQLModel):
+    id: str
+    filename: str
+    path: str
+
+class FaceEmbeddings(SQLModel, table=True):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
+    embedding: Any = Field(sa_type=Vector(512))
+    image_id: uuid.UUID = Field(
+        foreign_key="image.id", nullable=False, ondelete="CASCADE"
+    )
+    image: Image | None = Relationship(back_populates="face_embeddings")
+    created_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
+    
+class MatchImage(SQLModel):
+    image_base64: str
+
+class CompareImage(SQLModel):
+    image_base64_1: str
+    image_base64_2: str
