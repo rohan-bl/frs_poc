@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10, <4.0"
 resolution-markers = [
     "python_full_version == '3.12.*' and sys_platform == 'darwin'",
@@ -716,7 +716,7 @@ wheels = [
 
 [[package]]
 name = "deepface"
-version = "0.0.93"
+version = "0.0.95"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fire" },
@@ -735,9 +735,9 @@ dependencies = [
     { name = "tensorflow" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/10/95/76b2be896cff9d51aa7a7eb77bcca295f362bd32c121170c2210206404d9/deepface-0.0.93.tar.gz", hash = "sha256:7f5fc6306a3a07ee6c529b03571e64fe53d9f259e1d4091f5e28386264962b92", size = 80702, upload-time = "2024-08-17T07:24:31.911Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d0/29/f29612794e6ef0c14a87ee5bb77e9f35c558bc8816a7ceddebb3242f65b4/deepface-0.0.95.tar.gz", hash = "sha256:a8301c0b77c2e058de7718be2f2d37530ab79d6ed67755a7cacdd9f23f85c8cc", size = 108590, upload-time = "2025-08-05T20:39:47.529Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ca/f6/4fa3f64b1a02141c037ed71a40ebf8fb8cc1ec9e860df6301fc9121bc0d4/deepface-0.0.93-py3-none-any.whl", hash = "sha256:27043e1aa5df05a060bcfe1743409075c66f6f1de86a592ba0cdac79ac9e7987", size = 108586, upload-time = "2024-08-17T07:24:30.049Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/29/4b932aa8e1fbd7ad26d4550f394797f155073a1375eeb84cf54ad4f226bc/deepface-0.0.95-py3-none-any.whl", hash = "sha256:ae3472b62cde35356860fbecc452dae52f0e59ebfbeef57d60a77c7878f8091c", size = 128270, upload-time = "2025-08-05T20:39:45.851Z" },
 ]
 
 [[package]]
