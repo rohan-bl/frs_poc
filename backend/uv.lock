@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10, <4.0"
 resolution-markers = [
     "python_full_version == '3.12.*' and sys_platform == 'darwin'",
@@ -2497,6 +2497,20 @@ wheels = [
 ]
 
 [[package]]
+name = "polars"
+version = "1.32.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/aa/f2/1a76a8bd902bc4942e435a480f362c8687bba60d438ff3283191e38568fa/polars-1.32.3.tar.gz", hash = "sha256:57c500dc1b5cba49b0589034478db031815f3d57a20cb830b05ecee1a9ba56b1", size = 4838448, upload-time = "2025-08-14T17:28:10.702Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4c/9b/5937ab9f8fa49c8e00617aeb817a5ffa5740434d5bb8a90f2afa657875aa/polars-1.32.3-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:c7c472ea1d50a5104079cb64e34f78f85774bcc69b875ba8daf21233f4c70d42", size = 37935794, upload-time = "2025-08-14T17:26:55.565Z" },
+    { url = "https://files.pythonhosted.org/packages/6e/e9/88f5332001b9dd5c8e0a4fab51015f740e01715a081c41bc0f7ad2bf76a5/polars-1.32.3-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:fd87275f0cc795e72a2030b58293198cfa748d4b009cf52218e27db5397ed07f", size = 34621102, upload-time = "2025-08-14T17:27:00.521Z" },
+    { url = "https://files.pythonhosted.org/packages/ab/8a/6f56af7e535c34c95decc8654786bfce4632ba32817dc2f8bad18571ef9a/polars-1.32.3-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c9a9b9668ef310e5a77a7e7daa9c753874779c8da52e93f654bfd7953eb4b60b", size = 38443071, upload-time = "2025-08-14T17:27:08.382Z" },
+    { url = "https://files.pythonhosted.org/packages/46/aa/63536ea5780edc0ef6850679dc81d519f3966c7bb11a5cf10ccecb541095/polars-1.32.3-cp39-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:c8f5d2f43b80b68e39bfaa2948ce632563633466576f12e74e8560d6481f5851", size = 35639598, upload-time = "2025-08-14T17:27:12.261Z" },
+    { url = "https://files.pythonhosted.org/packages/d7/c8/226953cda6cf9ae63aa9714d396a9138029e31db3c504c15d6711b618f8f/polars-1.32.3-cp39-abi3-win_amd64.whl", hash = "sha256:db56a7cb4898e173d62634e182f74bdff744c62be5470e0fe20df8d10f659af7", size = 38038192, upload-time = "2025-08-14T17:27:15.993Z" },
+    { url = "https://files.pythonhosted.org/packages/ec/99/6b93c854e602927a778eabd7550204f700cc4e6c07be73372371583dda3e/polars-1.32.3-cp39-abi3-win_arm64.whl", hash = "sha256:a2e3f87c60f54eefe67b1bebd3105918d84df0fd6d59cc6b870c2f16d2d26ca1", size = 34198919, upload-time = "2025-08-14T17:27:21.423Z" },
+]
+
+[[package]]
 name = "portalocker"
 version = "3.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -3782,14 +3796,14 @@ wheels = [
 
 [[package]]
 name = "ultralytics"
-version = "8.3.171"
+version = "8.3.187"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "opencv-python" },
-    { name = "pandas" },
     { name = "pillow" },
+    { name = "polars" },
     { name = "psutil" },
     { name = "py-cpuinfo" },
     { name = "pyyaml" },
@@ -3798,12 +3812,11 @@ dependencies = [
     { name = "scipy", version = "1.16.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "torch" },
     { name = "torchvision" },
-    { name = "tqdm" },
     { name = "ultralytics-thop" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/eb/97/511ae9761aa9ca356638155eab852ed8615e45230327e9550609327a394e/ultralytics-8.3.171.tar.gz", hash = "sha256:243d23af48935e8e82514450745d9052dc37d2bdbffafa32d5b3beed460095e9", size = 894494, upload-time = "2025-07-31T08:55:34.383Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/af/07/2f2dbc216172e00c1aa906674e2ac98577d9cb2b7b32deff0aadd01cca57/ultralytics-8.3.187.tar.gz", hash = "sha256:549bb0c1aee01e533bd3415c27681b56ba6b5d325108ef0acdbcfd4ee073c137", size = 909730, upload-time = "2025-08-27T10:51:34.863Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e3/1d/3a6ec3ce9bb2d6c326d4548f9aa80d32c45193d29c82b422555e4d1c62db/ultralytics-8.3.171-py3-none-any.whl", hash = "sha256:519d5cb18defb99364f93f990a873fdb1c26a3e7a02757b21c3554c6153debcf", size = 1042146, upload-time = "2025-07-31T08:55:31.928Z" },
+    { url = "https://files.pythonhosted.org/packages/de/75/47dd77bd7997dfb81cb6b7a82bad45ee4d5a8c62a7f4e9bcd3a3e633598a/ultralytics-8.3.187-py3-none-any.whl", hash = "sha256:3b354fafcf76c021c583ee6af9c01750e14f1aee8a93fa80a9a746bce6af17e1", size = 1058800, upload-time = "2025-08-27T10:51:32.515Z" },
 ]
 
 [[package]]
